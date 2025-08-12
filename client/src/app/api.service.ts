@@ -11,6 +11,6 @@ export class ApiService {
 
   getAll() {
     const { apiUrl } = environment;
-    return this.http.get(`${apiUrl}/data/movies`)
+    return this.http.get(`${apiUrl}/data/games`)
   }
 }
