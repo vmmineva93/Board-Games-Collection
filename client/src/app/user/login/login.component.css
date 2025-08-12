@@ -1,0 +1,34 @@
+@media (min-width: 992px) {
+    .container.quote {
+        max-width: 100% !important;
+    }
+
+    .quote-text  {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .quote-text  {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .quote-text  {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+p.error {
+    text-align: left;
+    border-radius: 0.5em;
+    color: red!important;
+    padding-top: 0;
+    font-weight: bold;
+}
+
+.input-error {
+    border-left-color: red!important;
+    border-color: red!important;
+}
