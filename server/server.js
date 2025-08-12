@@ -1488,6 +1488,22 @@
     	},
     	orders: {
     	},
+        games: {
+            "a699f37c-a67b-4fa8-9f7e-fef3c92f739a": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                title: "Ace of Spades",
+                year: "2025",
+                players: "1-2",
+                playingTime: "40-45",
+                age: "14+",
+                categories: "Cooperative Game",
+                designer: "Benjamín Amorín",
+                imageUrl: "https://cf.geekdo-images.com/m6Do-APgKAZXZvH5UaWoCQ__imagepage/img/um2q17_-0k7i8zsCSwrUOj5lPEE=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8773199.jpg",
+                description: "Your path of vengeance has led you to Sweet Haven, Arizona. You know that the necromancer who has ruined your life has taken over the cemetery as his base of operations and you are going to finish him off at all costs. You face Lord Overkill, a supernatural being, but your prowess as a gambler goes beyond sleight of hand.",
+                _createdOn: 1742992642407,
+                _id: "a699f37c-a67b-4fa8-9f7e-fef3c92f739a"
+            },
+        },
     	movies: {
     		"1240549d-f0e0-497e-ab99-eb8f703713d7": {
     			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",

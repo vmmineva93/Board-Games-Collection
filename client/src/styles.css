@@ -75,3 +75,8 @@
     justify-content: center;
     font-weight: normal;
 }
+
+.paddingTopBottom {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
