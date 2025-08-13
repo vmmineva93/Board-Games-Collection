@@ -8,12 +8,13 @@ import { CollectionComponent } from './collection/collection.component.js';
 import { AddGameComponent } from './single-game/add-game/add-game.component.js';
 import { CurrentGameComponent } from './single-game/current-game/current-game.component.js';
 import { EditGameComponent } from './single-game/edit-game/edit-game.component.js';
+import { AuthGuard } from './guards/auth.guards.js';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent},
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
+    { path: 'login', canActivate: [AuthGuard], component: LoginComponent },
+    { path: 'register', canActivate: [AuthGuard], component: RegisterComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'collection', 
         children: [

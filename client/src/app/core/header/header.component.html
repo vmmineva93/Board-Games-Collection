@@ -7,25 +7,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-4 py-lg-0">
-            <a routerLink="/collection" class="nav-item nav-link">Games</a>
-            
-          
+            @if(isLoggedIn) {
+
             <a routerLink="/add-game" class="nav-item nav-link">Add Game</a>
             <a routerLink="/profile" class="nav-item nav-link">My meeple</a>
-            <a href="contact.html" class="nav-item nav-link">Logout</a>
-            
-          
+            <a (click)="logout()" class="nav-item nav-link">Logout</a>
+            } @else {
+            <a routerLink="/collection" class="nav-item nav-link">Games</a>
             <a routerLink="/login" class="nav-item nav-link">Login</a>
             <a routerLink="/register" class="nav-item nav-link">Register</a>
-       
-           
-           
+            }
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
-            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-square rounded-circle bg-light text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i
+                    class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i
+                    class="fab fa-twitter"></i></a>
+            <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-square rounded-circle bg-light text-primary me-0" href=""><i
+                    class="fab fa-instagram"></i></a>
         </div>
     </div>
 </nav>
