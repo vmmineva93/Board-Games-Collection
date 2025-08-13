@@ -1,1 +1,9 @@
-<p>main works!</p>
+@if (isLoggedIn) {
+    <div class="container">
+      <app-collection />
+      
+    </div>
+    } @else {
+    <app-home />
+    }
+    
