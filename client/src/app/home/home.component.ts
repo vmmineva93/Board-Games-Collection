@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service.js';
 import { RouterLink } from '@angular/router';
+import { UserService } from '../user/user.service.js';
 
 
 @Component({
@@ -10,14 +11,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
-
-  ngOnInit(): void {
-    this.apiService.getAll().subscribe((p) => {
-      console.log(p);
-      
-    })
+export class HomeComponent  {
+  get isLoggedIn(): boolean {
+    return this.userService.isLogged;
   }
 
+
+  constructor(private userService: UserService){}
 }

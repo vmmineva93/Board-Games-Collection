@@ -15,7 +15,7 @@
                             <div class="col-12 col-sm-6">
                                 <input [class]="(
               (inputEmail?.touched && inputEmail?.errors?.['required']) || 
-               (inputEmail?.touched && inputEmail?.errors?.['EmailValidationDirective']))
+               (inputEmail?.touched && inputEmail?.errors?.['emailValidator']))
                ? 'input-error': ''" type="email" class="form-control border-0" placeholder="Your Email"
                                     style="height: 55px;" name="email" id="email" ngModel #inputEmail="ngModel"
                                     [appEmail]="domains">
