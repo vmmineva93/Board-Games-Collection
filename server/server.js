@@ -1090,6 +1090,8 @@
                         user = userData;
                     }
                 }
+                console.log('user', user)
+
                 if (user !== undefined) {
                     context.user = user;
                 } else {
