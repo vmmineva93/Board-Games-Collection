@@ -25,5 +25,6 @@ export const routes: Routes = [
     },
     { path: 'add-game', component: AddGameComponent },
     { path: '404', component: ErrorComponent},
+    // TODO: add 'error' component for generic errors
     { path: '**', redirectTo: '/404'},  
 ];

@@ -1,1 +1,31 @@
-<p>collection works!</p>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mb-5">Our Projects</h1>
+        </div>
+
+        <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+        </div>
+        <div class="row g-4 portfolio-container">
+            @for (game of games ; track $index) {
+            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                <div class="portfolio-inner">
+                    <img class="img-fluid w-100" src={{game.imageUrl}} alt="">
+                    <div class="text-center p-4">
+                        <p class="text-primary mb-2">{{game.title}}</p>
+                        <h5 class="lh-base mb-0">{{game.categories}}</h5>
+                    </div>
+                    <div class="portfolio-text text-center bg-white p-4">
+                        <p class="text-primary mb-2">Business Security</p>
+                        <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
