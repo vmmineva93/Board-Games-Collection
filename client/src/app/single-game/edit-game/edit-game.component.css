@@ -1,0 +1,46 @@
+.form-wrapper {
+    width: 30%;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.form-wrapper .new-btn {
+    margin-top: 20px;
+}
+
+.new-btn:hover {
+    background-color: pink !important;
+    border-color: pink !important;
+    box-shadow: none;
+}
+
+.new-btn:active {
+    background-color: pink !important;
+    border-color: pink !important;
+    box-shadow: none;
+}
+
+.new-btn:disabled {
+    background-color: pink !important;
+    border-color: pink !important;
+    box-shadow: none;
+}
+
+.new-btn:focus {
+    background-color: pink !important;
+    border-color: pink !important;
+    box-shadow: none;
+}
+
+.btn-primary {
+    border-color: white;
+    background-color: black;
+}
+
+.btn.btn-primary {
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: pink;
+}

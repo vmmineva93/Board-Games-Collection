@@ -35,6 +35,20 @@ export class ApiService {
     return this.http.delete(`/api/data/games/${id}`);
   }
 
+  updateGame(
+    gameId: string,
+    title: string, 
+    players: string, 
+    playingTime: string, 
+    age: string, 
+    categories: string, 
+    imageUrl: string, 
+    description: string
+  ) {
+    const payload = { title, players, playingTime, age, categories, imageUrl, description };
+    return this.http.put<Game>(`/api/data/games/${gameId}`, payload);
+  }
+
   likeGame<Game>(gameId: string) {
     const payload = { gameId };
 
