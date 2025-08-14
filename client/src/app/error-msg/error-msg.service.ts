@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ErrorMsgService {
 
   private apiError$$ = new BehaviorSubject<string | null>(null);
-  public apiError$ = this.apiError$$.asObservable();
+  readonly apiError$ = this.apiError$$.asObservable();
 
   constructor() {}
 
