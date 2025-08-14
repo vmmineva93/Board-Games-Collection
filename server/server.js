@@ -1501,6 +1501,7 @@
                 imageUrl: "https://cf.geekdo-images.com/m6Do-APgKAZXZvH5UaWoCQ__imagepage/img/um2q17_-0k7i8zsCSwrUOj5lPEE=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8773199.jpg",
                 description: "Your path of vengeance has led you to Sweet Haven, Arizona. You know that the necromancer who has ruined your life has taken over the cemetery as his base of operations and you are going to finish him off at all costs. You face Lord Overkill, a supernatural being, but your prowess as a gambler goes beyond sleight of hand.",
                 _createdOn: 1742992642407,
+                likes: [],
                 _id: "a699f37c-a67b-4fa8-9f7e-fef3c92f739a"
             },
         },

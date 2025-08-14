@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../types/games.js';
 import { ApiService } from '../api.service.js';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-collection',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './collection.component.html',
   styleUrl: './collection.component.css'
 })

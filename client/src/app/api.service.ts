@@ -13,6 +13,10 @@ export class ApiService {
     return this.http.get<Game[]>(`/api/data/games`);
   }
 
+  getSingleGame(id: string) {
+    return this.http.get<Game>(`/api/data/games/${id}`);
+  }
+
   createGame(
     title: string, 
     players: string, 
@@ -26,5 +30,20 @@ export class ApiService {
 
     return this.http.post<Game>(`/api/data/games`, payload);
   }
+
+  deleteGame(id: string) {
+    return this.http.delete(`/api/data/games/${id}`);
+  }
+
+  likeGame<Game>(gameId: string) {
+    const payload = { gameId };
+
+    return this.http.post<Game>(`/api/data/likes`, payload);
+  }
+
+  getLikesOnGame(gameId: string) {
+    return this.http.get(`/api/data/likes?where=gameId%3D"${gameId}"`);
+  }
+
 
 }

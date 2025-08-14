@@ -1,1 +1,77 @@
-<p>current-game works!</p>
+<div class="outer-container">
+    <div class="inner-container">
+        <div class="details-container">
+            <div class="left-container">
+                <div class="text-container">
+                    <h1 class="display-artist">{{game.title}}</h1>
+                    <p class="display-description">{{game.description}}</p>
+                    <div class="vinyl-info">
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="ms-4">
+                                    <p class="paragraph-info">Category:</p>
+                                    <h5 class="mb-0">{{game.categories}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="ms-4">
+                                    <p class="paragraph-info">Playing Time:</p>
+                                    <h5 class="mb-0">{{game.playingTime}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="ms-4">
+                                    <p class="paragraph-info">Players:</p>
+                                    <h5 class="mb-0">{{game.players}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="ms-4">
+                                    <p class="paragraph-info">Age:</p>
+                                    <h5 class="mb-0">{{game.age}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6b">
+                            <div class="d-flexb">
+
+                               @if(isLogged && isOwner) {
+                                    <a routerLink="/games/edit/{{ game._id }}" class="btn-class">Edit</a>
+                                    <button (click)="delete()" class="btn-class">Delete</button>
+                               }
+                               @if(isLogged && !isGameLikedByUser && !isOwner) {
+                                <button (click)="like(game._id)" class="btn-class">Like</button>
+                               }
+                              
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="ms-4">
+                                    <div class="likes">
+                                        <img class="hearts" src="heart.png" height="30px" width="30px" />
+                                        <span id="total-likes">Likes: {{this.likes}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="pic-container">
+                    <img class="img-position"
+                        src={{game.imageUrl}}
+                        alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

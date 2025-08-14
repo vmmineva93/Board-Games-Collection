@@ -8,5 +8,6 @@ export interface Game {
     description: string,
     imageUrl: string,
     _createdOn: string,
+    likes: string[];
     _id: string;
 }
