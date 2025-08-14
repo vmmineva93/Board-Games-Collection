@@ -13,11 +13,12 @@
                     <form #form="ngForm" (ngSubmit)="login(form)">
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
-                                <input [class]="(
-              (inputEmail?.touched && inputEmail?.errors?.['required']) || 
-               (inputEmail?.touched && inputEmail?.errors?.['emailValidator']))
-               ? 'input-error': ''" type="email" class="form-control border-0" placeholder="Your Email"
-                                    style="height: 55px;" name="email" id="email" ngModel #inputEmail="ngModel"
+                                <input  [class]="(
+                                    (inputEmail?.touched && inputEmail?.errors?.['required']) || 
+                                     (inputEmail?.touched && inputEmail?.errors?.['emailValidator']))
+                                     ? 'input-error': ''"
+                                type="email" id="email" name="email" class="form-control border-0" placeholder="Your Email"
+                                    style="height: 55px;" #inputEmail="ngModel" ngModel required
                                     [appEmail]="domains">
                             </div>
                             @if(inputEmail?.touched){
@@ -55,9 +56,9 @@
                                 [disabled]="form.invalid"
                                 [style]="{ backgroundColor: form.invalid ? 'grey' : '#234465' }">Login</button>
                             </div>
-                            <p className="field reg-log-span">
+                            <p class="field reg-log-span">
                                 <span>If you don't have profile click <a routerLink="/register"
-                                        className='log-reg-text'>Register</a></span>
+                                        class='log-reg-text'>Register</a></span>
                             </p>
                         </div>
                     </form>

@@ -9,22 +9,91 @@
             <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 pe-lg-0">
                     <h1 class="display-5 mb-5">Register</h1>
-                    <form>
+                    <form form #registerForm="ngForm" (ngSubmit)="register()">
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                <input [class]="(
+                                    (inputEmail?.touched && inputEmail?.errors?.['required']) || 
+                                     (inputEmail?.touched && inputEmail?.errors?.['emailValidator']))
+                                     ? 'input-error': ''"
+                                type="text" id="email" name="email" email class="form-control border-0" placeholder="Your Email" style="height: 55px;" #inputEmail="ngModel" ngModel required [appEmail]="domains">
                             </div>
+                            @if(inputEmail?.touched) {
+
+                                @if(inputEmail?.errors?.['required']){
+                                  
+                                  <div class="error">
+                                    <p>Email is required.</p>
+                                  </div>
+                                  }
+                             
+                                @if(inputEmail?.errors?.['emailValidator']){
+                                  
+                                  <div class="error">
+                                    <p>Email is invalid!</p>
+                                  </div>
+                                  }
+                              }
+                             
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" placeholder="Your Password" style="height: 55px;">
+                                <input [class]="(
+                                    (passwordInput?.touched && passwordInput?.errors?.['required']) || 
+                                     (passwordInput?.touched && passwordInput?.errors?.['minlength']))
+                                     ? 'input-error': ''"
+                                type="password" id="password" name="password" #passwordInput="ngModel" ngModel required minlength="5" class="form-control border-0" placeholder="Your Password" style="height: 55px;">
                             </div>
+                            @if(passwordInput?.touched) {
+      
+                                @if(passwordInput?.errors?.['required']){
+                                  
+                                  <div class="error">
+                                    <p>Password is required.</p>
+                                  </div>
+                                  }
+                                @if(passwordInput?.errors?.['minlength']){
+                                  
+                                  <div class="error">
+                                    <p>Password must be at least 5 characters.</p>
+                                  </div>
+                                  }
+                                }
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" placeholder="Repeat Password" style="height: 55px;">
+                                <input [class]="(
+                                    (rePasswordInput?.touched && rePasswordInput?.errors?.['required']) || 
+                                     (rePasswordInput?.touched && rePasswordInput?.errors?.['minlength']) ||
+                                     rePasswordInput?.touched && rePasswordInput?.errors?.['passwordsDontMatch'])
+                                     ? 'input-error': ''"
+                                type="password" id="rePassword" name="rePassword" class="form-control border-0" placeholder="Repeat Password" #rePasswordInput="ngModel"
+                                ngModel
+                                required
+                                minlength="5" style="height: 55px;">
                             </div>
+                            @if(rePasswordInput?.touched) {
+      
+                                @if(rePasswordInput?.errors?.['required']){
+                                  
+                                  <div class="error">
+                                    <p>Confirm Password is required.</p>
+                                  </div>
+                                  }
+                                }
+                          
+                                 @if (passwordInput.touched && rePasswordInput.touched) {
+                          
+                                   @if (passwordsDontMatch) {
+                                     <div class="error">
+                                       <p>Passwords don't match!</p>
+                                      </div>
+                                    }
+                                  }
+                       
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Register</button>
+                                <button [disabled]="registerForm.invalid"
+                                [style]="{ backgroundColor: registerForm.invalid ? 'grey' : '#234465' }"
+                                class="btn btn-primary w-100 py-3" type="submit">Register</button>
                             </div>
-                            <p className="field reg-log-span">
-                                <span>If you already have profile click <a routerLink="/login" className='log-reg-text'>Login</a></span>
+                            <p class="field reg-log-span">
+                                <span>If you already have profile click <a routerLink="/login" class='log-reg-text'>Login</a></span>
                             </p>
                         </div>
                     </form>
