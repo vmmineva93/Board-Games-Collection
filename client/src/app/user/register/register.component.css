@@ -24,11 +24,27 @@
     text-align: left;
     border-radius: 0.5em;
     color: red!important;
-    padding-top: 0;
+    padding-top: 10px;
     font-weight: bold;
+    margin-bottom: 0;
 }
 
 .input-error {
     border-left-color: red!important;
     border-color: red!important;
+}
+
+.register-fields {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.password,
+.repeat-password {
+    margin-top: 20px;
+}
+
+p.reg-log-span {
+    margin-top: 10px;
 }

@@ -13,6 +13,7 @@
     color: var(--dark);
     font-weight: 500;
     outline: none;
+    cursor: pointer;
 }
 
 .navbar .navbar-nav .nav-link:hover,
