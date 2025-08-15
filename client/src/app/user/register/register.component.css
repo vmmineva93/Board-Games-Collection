@@ -41,7 +41,8 @@
 }
 
 .password,
-.repeat-password {
+.repeat-password,
+.email {
     margin-top: 20px;
 }
 

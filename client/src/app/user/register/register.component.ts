@@ -27,10 +27,10 @@ export class RegisterComponent {
   constructor(private userService: UserService, private router: Router, private safeStorage: SafeStorageService) { }
 
   register() {
-    const { username, email, tel, password, rePassword } = this.registerForm?.form.value;
+    const { username, email, password, rePassword } = this.registerForm?.form.value;
 
     this.userService
-      .register(email, password, rePassword)
+      .register(username, email, password, rePassword)
       .subscribe((data) => {
         const token = data.accessToken;
         this.safeStorage.setItem('X-Authorization', token);

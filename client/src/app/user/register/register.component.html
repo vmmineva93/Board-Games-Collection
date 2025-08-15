@@ -12,6 +12,29 @@
                     <form form #registerForm="ngForm" (ngSubmit)="register()">
                         <div class="">
                           <div class="register-fields">
+                            <div class="username">
+                              <input [class]="(
+                                  (inputUsername?.touched && inputUsername?.errors?.['required']) || 
+                                   (inputUsername?.touched && inputUsername?.errors?.['minlength']))
+                                   ? 'input-error': ''"
+                              type="text" id="username" name="username" email class="form-control border-0" placeholder="Your Username" style="height: 55px;" #inputUsername="ngModel" ngModel required minlength="3">
+                          </div>
+                          @if(inputUsername?.touched) {
+
+                              @if(inputUsername?.errors?.['required']){
+                                
+                                <div class="error">
+                                  <p>Username is required.</p>
+                                </div>
+                                }
+                           
+                              @if(inputUsername?.errors?.['minlength']){
+                                
+                                <div class="error">
+                                  <p>Password must be at least 3 characters.</p>
+                                </div>
+                                }
+                            }
                             <div class="email">
                                 <input [class]="(
                                     (inputEmail?.touched && inputEmail?.errors?.['required']) || 
