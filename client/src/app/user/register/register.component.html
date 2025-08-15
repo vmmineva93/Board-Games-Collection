@@ -10,8 +10,9 @@
                 <div class="p-lg-5 pe-lg-0">
                     <h1 class="display-5 mb-5">Register</h1>
                     <form form #registerForm="ngForm" (ngSubmit)="register()">
-                        <div class="row g-3">
-                            <div class="col-12 col-sm-6">
+                        <div class="">
+                          <div class="register-fields">
+                            <div class="email">
                                 <input [class]="(
                                     (inputEmail?.touched && inputEmail?.errors?.['required']) || 
                                      (inputEmail?.touched && inputEmail?.errors?.['emailValidator']))
@@ -35,7 +36,7 @@
                                   }
                               }
                              
-                            <div class="col-12 col-sm-6">
+                            <div class="password">
                                 <input [class]="(
                                     (passwordInput?.touched && passwordInput?.errors?.['required']) || 
                                      (passwordInput?.touched && passwordInput?.errors?.['minlength']))
@@ -57,7 +58,7 @@
                                   </div>
                                   }
                                 }
-                            <div class="col-12 col-sm-6">
+                            <div class="repeat-password">
                                 <input [class]="(
                                     (rePasswordInput?.touched && rePasswordInput?.errors?.['required']) || 
                                      (rePasswordInput?.touched && rePasswordInput?.errors?.['minlength']) ||
@@ -86,6 +87,7 @@
                                       </div>
                                     }
                                   }
+                            </div>
                        
                             <div class="col-12">
                                 <button [disabled]="registerForm.invalid"

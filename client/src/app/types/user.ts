@@ -3,11 +3,11 @@ export interface User {
     username: string;
     email: string;
     password: string;
+    rePassword?: string,
     accessToken: string;
 }
 
 export interface UserForAuth {
-    username: string;
     _id: string;
     email: string;
     password: string;

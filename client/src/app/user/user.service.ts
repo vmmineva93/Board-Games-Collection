@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../types/user.js';
+import { User, UserForAuth } from '../types/user.js';
 import { BehaviorSubject, Observable, of, Subscription, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { SafeStorageService } from '../safe-storage.service.js';
@@ -8,6 +8,8 @@ import { SafeStorageService } from '../safe-storage.service.js';
   providedIn: 'root'
 })
 export class UserService {
+  private readonly AUTH_TOKEN = 'X-Authorization';
+  private readonly USER = 'user';
   private user$$ = new BehaviorSubject<User | null>(null);
   readonly user$ = this.user$$.asObservable();
 
@@ -20,15 +22,18 @@ export class UserService {
   }
 
   constructor(private http: HttpClient, private safeStorage: SafeStorageService) {
+    this.user$$.next(this.getLocalUser());
     this.user$.subscribe((user) => {
       this.user = user;
     });
   }
 
+
   login(email: string, password: string) {
     return this.http
       .post<User>(`/api/users/login`, { email, password })
       .pipe(tap((user) => {
+        this.storeLocalUser(user);
         this.user$$.next(user);
       }));
          
@@ -45,20 +50,24 @@ export class UserService {
         password,
         rePassword,
       })
-      .pipe(tap((user) => this.user$$.next(user)));
+      .pipe(tap((user) => {
+        this.storeLocalUser(user);
+        this.user$$.next(user);
+      }));
   }
 
   logout() {
     return this.http.get<User>(`/api/users/logout`, {}).pipe(
       tap((user) => {
-        this.safeStorage.removeItem('X-Authorization');
+        this.safeStorage.removeItem(this.AUTH_TOKEN);
+        this.safeStorage.removeItem(this.USER);
         this.user$$.next(null);
       })
     );
   }
 
   getProfile(): Observable<User | null> {
-    if (!this.isLogged) {
+    if (!this.user$$.value) {
       return of(null);
     }
 
@@ -67,6 +76,18 @@ export class UserService {
       .pipe(tap((user) => this.user$$.next(user)));
   }
   
+  private storeLocalUser(user: User): void {
+    this.safeStorage.setItem(this.USER, JSON.stringify(user));
+  }
+
+  private getLocalUser(): User | null {
+    try {
+      const userJson = this.safeStorage.getItem(this.USER);
+      return userJson ? JSON.parse(userJson) : null;
+    } catch {
+      return null;
+    }
+  }
 }
 
 
