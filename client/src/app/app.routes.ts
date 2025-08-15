@@ -8,7 +8,7 @@ import { CollectionComponent } from './collection/collection.component.js';
 import { AddGameComponent } from './single-game/add-game/add-game.component.js';
 import { CurrentGameComponent } from './single-game/current-game/current-game.component.js';
 import { EditGameComponent } from './single-game/edit-game/edit-game.component.js';
-import { AuthGuard } from './guards/auth.guards.js';
+import { AuthGuard } from './guards/auth.guard.js';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },

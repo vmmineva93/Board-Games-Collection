@@ -46,7 +46,6 @@ export class EditGameComponent implements OnInit {
     this.apiService
       .updateGame(gameId, title, players, playingTime, age, categories, imageUrl, description )
       .subscribe((res) => {
-        console.log(res);
         this.router.navigate(['/collection']);
       });
   }

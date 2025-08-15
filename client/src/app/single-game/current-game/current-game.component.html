@@ -42,7 +42,7 @@
                             <div class="d-flexb">
 
                                @if(isLogged && isOwner) {
-                                    <a routerLink="/games/edit/{{ game._id }}" class="btn-class">Edit</a>
+                                    <a [routerLink]="'/collection/edit/' + game._id" class="btn-class">Edit</a>
                                     <button (click)="delete()" class="btn-class">Delete</button>
                                }
                                @if(isLogged && !isGameLikedByUser && !isOwner) {
@@ -57,7 +57,7 @@
                                 <div class="ms-4">
                                     <div class="likes">
                                         <img class="hearts" src="heart.png" height="30px" width="30px" />
-                                        <span id="total-likes">Likes: {{this.likes}}</span>
+                                        <span class="total-likes">Likes: {{this.likes}}</span>
                                     </div>
                                 </div>
                             </div>
