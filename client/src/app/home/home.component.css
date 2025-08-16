@@ -126,3 +126,15 @@
     width: 100%;
     height: 800px;
 }
+
+.btn-primary:hover {
+    color: #000;
+    background-color: red !important;
+    border-color: black !important;
+}
+
+.btn-primary {
+    color: white;
+    background-color: black !important;
+    border-color: white !important;
+}

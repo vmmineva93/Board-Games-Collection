@@ -4,31 +4,35 @@
     padding: 40px;
 }
 
+.form-wrapper h2 {
+    text-align: center;
+}
+
 .form-wrapper .new-btn {
     margin-top: 20px;
 }
 
 .new-btn:hover {
-    background-color: pink !important;
-    border-color: pink !important;
+    background-color: red !important;
+    border-color: black !important;
     box-shadow: none;
 }
 
 .new-btn:active {
-    background-color: pink !important;
-    border-color: pink !important;
+    background-color: red !important;
+    border-color: black !important;
     box-shadow: none;
 }
 
 .new-btn:disabled {
-    background-color: pink !important;
-    border-color: pink !important;
+    background-color: red !important;
+    border-color: black !important;
     box-shadow: none;
 }
 
 .new-btn:focus {
-    background-color: pink !important;
-    border-color: pink !important;
+    background-color: red !important;
+    border-color: black !important;
     box-shadow: none;
 }
 
@@ -42,5 +46,39 @@
 }
 
 .btn-primary:hover {
-    background-color: pink;
+    background-color: red;
+    border-color: black;
+}
+
+.container-edit {
+    background-image: url('../../../assets/img/404.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+h2 {
+    color: black;
+    font-weight: 500;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    border-radius: 20px !important;
+}
+
+p.error {
+    text-align: left;
+    border-radius: 0.5em;
+    color: red!important;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.input-error {
+    border-left-color: red!important;
+    border-color: red!important;
 }

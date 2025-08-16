@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service.js';
 import { RouterLink } from '@angular/router';
 import { UserService } from '../user/user.service.js';
+import { RecentlyAddedComponent } from '../recently-added/recently-added.component.js';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RecentlyAddedComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
