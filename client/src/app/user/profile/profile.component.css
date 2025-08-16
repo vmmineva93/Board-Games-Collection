@@ -26,33 +26,11 @@
     padding-top: 60px;
 }
 
-.horror-text {
-    font-family: 'Creepster', cursive;
-    font-size: 4rem;
+.boardgames-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 3rem;
     color: red;
-    position: relative;
-    display: inline-block;
-    text-shadow: 2px 2px 5px black;
-  
-    /* Създаваме капещ ефект с псевдоелементи */
-    &::after {
-      content: '';
-      position: absolute;
-      width: 4px;
-      height: 10px;
-      background: red;
-      bottom: -10px;
-      left: 20%;
-      border-radius: 50%;
-      animation: drip 1s infinite;
-    }
-  }
-  
-  /* Анимация за капка кръв */
-  @keyframes drip {
-    0% { transform: translateY(0); opacity: 1; }
-    80% { transform: translateY(20px); opacity: 0.7; }
-    100% { transform: translateY(40px); opacity: 0; }
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
 
   .text-primary {

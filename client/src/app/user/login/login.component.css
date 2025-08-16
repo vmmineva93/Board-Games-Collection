@@ -47,3 +47,16 @@ p.reg-log-span {
     margin-top: 10px;
 }
 
+.form-control:focus {
+    box-shadow: 0 0 0 .10rem black;
+}
+
+.btn-primary{
+    border-color: white !important;
+    background-color: black !important;
+}
+
+a {
+    color: red;
+}
+

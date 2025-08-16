@@ -1,16 +1,10 @@
 export interface User {
     _id: string;
+    email: string;
     username: string;
-    email: string;
     password: string;
-    rePassword?: string,
+    rePassword: string,
     accessToken: string;
-}
-
-export interface UserForAuth {
-    _id: string;
-    email: string;
-    password: string;
 }
 
 export interface ProfileDetails {
