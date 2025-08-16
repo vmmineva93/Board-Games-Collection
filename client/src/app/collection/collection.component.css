@@ -46,3 +46,12 @@
     height: 65px;
 }
 
+.text-primary {
+    color: red !important;
+}
+
+.btn-primary {
+    color: white;
+    background-color: red;
+    border-color: black;
+}

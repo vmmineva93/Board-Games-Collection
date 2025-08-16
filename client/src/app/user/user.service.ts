@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { User, UserForAuth } from '../types/user.js';
-import { BehaviorSubject, Observable, of, Subscription, tap } from 'rxjs';
+import { User } from '../types/user.js';
+import { BehaviorSubject, Observable, of, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { SafeStorageService } from '../safe-storage.service.js';
 
@@ -47,6 +47,7 @@ export class UserService {
   ) {
     return this.http
       .post<User>(`/api/users/register`, {
+        username,
         email,
         password,
         rePassword,
