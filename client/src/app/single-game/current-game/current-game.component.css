@@ -47,7 +47,7 @@ h1 {
     word-wrap: break-word;
 }
 
-.vinyl-info {
+.game-info {
     --bs-gutter-y: 1.5rem;
     --bs-gutter-x: 1.5rem;
     display: flex;
@@ -134,8 +134,6 @@ h5 {
 
 .img-position {
     height: 100% !important;
-    /* width: 100% !important;
-    position: absolute !important; */
     max-width: 100%;
     vertical-align: middle;
     overflow: clip;
@@ -151,7 +149,7 @@ h5 {
     border-radius: 50rem !important;
     margin-right: 1rem !important;
     background-color: black;
-    border-color: black;
+    border-color: white;
     line-height: 1.2;
     text-align: center;
     vertical-align: middle;
@@ -162,15 +160,6 @@ h5 {
     font-weight: 700;
 }
 
-.btn-class:hover {
-    background-color: pink;
-    border-color: pink;
-}
-
-.btn-class:active {
-    background-color: pink;
-    border-color: pink;
-}
 
 .loading {
     width: 100%;
@@ -183,4 +172,18 @@ h5 {
 
 .total-likes {
     padding-left: 10px;
+}
+
+.btn-class:hover {
+    background-color: red;
+    border-color: black;
+}
+
+.btn-class:active {
+    background-color: red;
+    border-color: black;
+}
+
+.paragraph-info {
+    color: red !important;
 }

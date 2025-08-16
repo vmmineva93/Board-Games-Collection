@@ -22,3 +22,22 @@
     letter-spacing: 1px;
     box-shadow: none;
 }
+
+.footer {
+    background-color: black !important;
+}
+
+.container-fluid  {
+    background-image: url('../../../assets/img/saw.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.footer {
+    padding-bottom: 2rem !important;
+    box-shadow: 10px 10px 14px 14px #ffffff42;
+    margin-bottom: 0.5px;
+    position: relative;
+
+}

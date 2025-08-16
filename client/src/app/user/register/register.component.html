@@ -10,14 +10,14 @@
                 <div class="p-lg-5 pe-lg-0">
                     <h1 class="display-5 mb-5">Register</h1>
                     <form form #registerForm="ngForm" (ngSubmit)="register()">
-                        <div class="">
+                        <!-- <div class=""> -->
                           <div class="register-fields">
                             <div class="username">
                               <input [class]="(
                                   (inputUsername?.touched && inputUsername?.errors?.['required']) || 
                                    (inputUsername?.touched && inputUsername?.errors?.['minlength']))
                                    ? 'input-error': ''"
-                              type="text" id="username" name="username" email class="form-control border-0" placeholder="Your Username" style="height: 55px;" #inputUsername="ngModel" ngModel required minlength="3">
+                              type="text" id="username" name="username" class="form-control border-0" placeholder="Your Username" style="height: 55px;" #inputUsername="ngModel" ngModel required minlength="3">
                           </div>
                           @if(inputUsername?.touched) {
 
@@ -31,7 +31,7 @@
                               @if(inputUsername?.errors?.['minlength']){
                                 
                                 <div class="error">
-                                  <p>Password must be at least 3 characters.</p>
+                                  <p>Username must be at least 3 characters.</p>
                                 </div>
                                 }
                             }
@@ -114,13 +114,13 @@
                        
                             <div class="col-12">
                                 <button [disabled]="registerForm.invalid"
-                                [style]="{ backgroundColor: registerForm.invalid ? 'grey' : '#234465' }"
+                                [style]="{ backgroundColor: registerForm.invalid ? 'grey' : 'black' }"
                                 class="btn btn-primary w-100 py-3" type="submit">Register</button>
                             </div>
                             <p class="field reg-log-span">
                                 <span>If you already have profile click <a routerLink="/login" class='log-reg-text'>Login</a></span>
                             </p>
-                        </div>
+                        <!-- </div> -->
                     </form>
                 </div>
             </div>
