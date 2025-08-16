@@ -1,8 +1,4 @@
 @media (min-width: 992px) {
-    .container.about {
-        max-width: 100% !important;
-    }
-
     .about-text  {
         padding-right: calc(((100% - 960px) / 2) + .75rem);
     }
@@ -19,3 +15,62 @@
         padding-right: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
+
+.image-container {
+    height: 500px;
+}
+
+.information-container {
+    text-align: center;
+    padding-left: 100px;
+    padding-top: 60px;
+}
+
+.horror-text {
+    font-family: 'Creepster', cursive;
+    font-size: 4rem;
+    color: red;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 5px black;
+  
+    /* Създаваме капещ ефект с псевдоелементи */
+    &::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 10px;
+      background: red;
+      bottom: -10px;
+      left: 20%;
+      border-radius: 50%;
+      animation: drip 1s infinite;
+    }
+  }
+  
+  /* Анимация за капка кръв */
+  @keyframes drip {
+    0% { transform: translateY(0); opacity: 1; }
+    80% { transform: translateY(20px); opacity: 0.7; }
+    100% { transform: translateY(40px); opacity: 0; }
+  }
+
+  .text-primary {
+    color: red !important;
+  }
+
+  .btn-primary {
+    color: white;
+    background-color: black;
+    border-color: white;
+  }
+
+  .btn-primary:hover {
+    color: white;
+    background-color: red;
+    border-color: black;
+  }
+
+
+
+  
