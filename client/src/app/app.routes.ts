@@ -1,30 +1,66 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component.js';
-import { ErrorComponent } from './error/error.component.js';
-import { LoginComponent } from './user/login/login.component.js';
-import { RegisterComponent } from './user/register/register.component.js';
-import { ProfileComponent } from './user/profile/profile.component.js';
-import { CollectionComponent } from './collection/collection.component.js';
-import { AddGameComponent } from './single-game/add-game/add-game.component.js';
-import { CurrentGameComponent } from './single-game/current-game/current-game.component.js';
-import { EditGameComponent } from './single-game/edit-game/edit-game.component.js';
 import { AuthGuard } from './guards/auth.guard.js';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent},
-    { path: 'login', canActivate: [AuthGuard], component: LoginComponent },
-    { path: 'register', canActivate: [AuthGuard], component: RegisterComponent },
-    { path: 'profile', component: ProfileComponent },
-    { path: 'collection', 
+    {
+        path: 'home', loadComponent: () =>
+            import('../app/home/home.component.js').then(
+                (c) => c.HomeComponent
+            ),
+    },
+    {
+        path: 'login', canActivate: [AuthGuard], loadComponent: () =>
+            import('../app/user/login/login.component.js').then(
+                (c) => c.LoginComponent
+            ),
+    },
+    {
+        path: 'register', canActivate: [AuthGuard], loadComponent: () =>
+            import('../app/user/register/register.component.js').then(
+                (c) => c.RegisterComponent
+            ),
+    },
+    {
+        path: 'profile', loadComponent: () =>
+            import('../app/user/profile/profile.component.js').then(
+                (c) => c.ProfileComponent
+            ),
+    },
+    {
+        path: 'collection',
         children: [
-            { path: '', component: CollectionComponent },
-            { path: ':gameId', component: CurrentGameComponent },
-            { path: 'edit/:gameId', component: EditGameComponent },
+            {
+                path: '', loadComponent: () =>
+                    import('../app/collection/collection.component.js').then(
+                        (c) => c.CollectionComponent
+                    ),
+            },
+            {
+                path: ':gameId', loadComponent: () =>
+                    import('../app/single-game/current-game/current-game.component.js').then(
+                        (c) => c.CurrentGameComponent
+                    ),
+            },
+            {
+                path: 'edit/:gameId', loadComponent: () =>
+                    import('../app/single-game/edit-game/edit-game.component.js').then(
+                        (c) => c.EditGameComponent
+                    ),
+            },
         ],
     },
-    { path: 'add-game', component: AddGameComponent },
-    { path: '404', component: ErrorComponent},
-    // TODO: add 'error' component for generic errors
-    { path: '**', redirectTo: '/404'},  
+    {
+        path: 'add-game', loadComponent: () =>
+            import('../app/single-game/add-game/add-game.component.js').then(
+                (c) => c.AddGameComponent
+            ),
+    },
+    {
+        path: '404', loadComponent: () =>
+            import('../app/error/error.component.js').then(
+                (c) => c.ErrorComponent
+            ),
+    },
+    { path: '**', redirectTo: '/404' },
 ];
