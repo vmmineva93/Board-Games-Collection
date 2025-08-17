@@ -39,5 +39,8 @@
     box-shadow: 10px 10px 14px 14px #ffffff42;
     margin-bottom: 0.5px;
     position: relative;
+}
 
+a {
+    color: red;
 }
