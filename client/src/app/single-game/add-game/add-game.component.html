@@ -38,7 +38,7 @@
             <div class="form-group">
                 <label for="playingTime"></label>
                 <input required type="text" class="form-control" name="playingTime" id="playingTime"
-                    placeholder="PlayingTime" ngModel #inputPlayingTime="ngModel" minlength="3" />
+                    placeholder="PlayingTime" ngModel #inputPlayingTime="ngModel" minlength="2" />
             </div>
             @if(inputPlayingTime?.touched){
             <div>
@@ -47,14 +47,14 @@
                 }
                 <!---->
                 @if(inputPlayingTime?.errors?.['minlength']){
-                <p class="error">Playing time must be at least 3 characters long.</p>
+                <p class="error">Playing time must be at least 2 characters long.</p>
                 }
             </div>
             }
             <div class="form-group">
                 <label for="age"></label>
                 <input required type="text" class="form-control" name="age" id="age" placeholder="Age" ngModel
-                    #inputAge="ngModel" minlength="3" />
+                    #inputAge="ngModel" minlength="2" />
             </div>
             @if(inputAge?.touched){
             <div>
@@ -63,7 +63,7 @@
                 }
                 <!---->
                 @if(inputAge?.errors?.['minlength']){
-                <p class="error">Age must be at least 3 characters long.</p>
+                <p class="error">Age must be at least 2 characters long.</p>
                 }
             </div>
             }

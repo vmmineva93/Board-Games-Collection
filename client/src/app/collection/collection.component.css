@@ -59,3 +59,7 @@
 h3 {
     text-align: center;
 }
+
+.img-fluid {
+    height: 350px !important;
+}

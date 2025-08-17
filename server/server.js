@@ -1491,18 +1491,70 @@
     	orders: {
     	},
         games: {
-            "a699f37c-a67b-4fa8-9f7e-fef3c92f739a": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                title: "Ace of Spades",
-                players: "1-2",
-                playingTime: "40-45",
-                age: "14+",
-                categories: "Cooperative Game",
-                imageUrl: "https://cf.geekdo-images.com/m6Do-APgKAZXZvH5UaWoCQ__imagepage/img/um2q17_-0k7i8zsCSwrUOj5lPEE=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8773199.jpg",
-                description: "Your path of vengeance has led you to Sweet Haven, Arizona. You know that the necromancer who has ruined your life has taken over the cemetery as his base of operations and you are going to finish him off at all costs. You face Lord Overkill, a supernatural being, but your prowess as a gambler goes beyond sleight of hand.",
-                _createdOn: 1742992642407,
+            "6f8e2680-7531-40f9-96d3-9dee3450233f": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                title: "Cascadia",
+                players: "1-4",
+                playingTime: "30-45",
+                age: "10+",
+                categories: "Abstract",
+                imageUrl: "https://cf.geekdo-images.com/MjeJZfulbsM1DSV3DrGJYA__imagepage/img/0ksox22FKLq-Z-rsbBlF2IDG9x0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5100691.jpg",
+                description: "Cascadia is a puzzly tile-laying and token-drafting game featuring the habitats and wildlife of the Pacific Northwest.",
+                _createdOn: 1755430220606,
                 likes: [],
-                _id: "a699f37c-a67b-4fa8-9f7e-fef3c92f739a"
+                _id: "6f8e2680-7531-40f9-96d3-9dee3450233f"
+            },
+            "b95977d2-ff55-4034-b225-733550436c73": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                title: "The Night Cage",
+                players: "1-5",
+                playingTime: "40-60",
+                age: "14+",
+                categories: "Horror",
+                imageUrl: "https://cf.geekdo-images.com/txQ7QzbQz89AO5BmVv7OqA__imagepage/img/LnSQG4u20Bmkax2cmJKn9IUDk7o=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5331288.png",
+                description: "The Night Cage is a fully co-operative, horror-themed tile-placement game that traps 1-5 lost souls within an unnatural labyrinth of eternal darkness. To win, players must each collect a key, find a gate, and escape as a group.",
+                _createdOn: 1755430744272,
+                likes: [],
+                _id: "b95977d2-ff55-4034-b225-733550436c73"
+            },
+            "19f7524d-6274-46e1-94bd-9c602ec989b6": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                title: "Mysterium",
+                players: "2-7",
+                playingTime: "42",
+                age: "10+",
+                categories: "Cooperative",
+                imageUrl: "https://cf.geekdo-images.com/1nQ3ZKudtDeAP7IiKE-kNg__imagepage/img/scbgJc5EdSpHJGxGbV9dgpxj9hQ=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8625343.jpg",
+                description: "In Mysterium, a reworking of the game system present in Tajemnicze Domostwo, one player takes the role of ghost while everyone else represents a medium. To solve the crime, the ghost must first recall (with the aid of the mediums) all of the suspects present on the night of the murder. A number of suspect, location and murder weapon cards are placed on the table, and the ghost randomly assigns one of each of these in secret to a medium.",
+                _createdOn: 1755432566445,
+                likes: [],
+                _id: "19f7524d-6274-46e1-94bd-9c602ec989b6"
+            },
+            "d6b7c06c-eea1-4748-a980-51101e49afc7": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "PARKS",
+                players: "1-5",
+                playingTime: "30-60",
+                age: "10+",
+                categories: "Family",
+                imageUrl: "https://cf.geekdo-images.com/mF2cSNRk2O6HtE45Sl9TcA__imagepage/img/fHti47Z7pAXUE1_pxGYz-gUOfyo=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4852372.jpg",
+                description: "In PARKS, players will take on the role of two hikers as they trek through different trails across four seasons of the year. While on the trail, these hikers will take actions and collect memories of the places your hikers visit. These memories are represented by various resource tokens like mountains and forests. Collecting these memories in sets will allow players to trade them in to visit a National Park at the end of each hike.",
+                _createdOn: 1755432963523,
+                likes: [],
+                _id: "d6b7c06c-eea1-4748-a980-51101e49afc7"
+            },
+            "ec3b1941-9189-4419-b8bd-218ee75520bc": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Betrayal at House on the Hill",
+                players: "3-6",
+                playingTime: "60",
+                age: "12+",
+                categories: "Horror",
+                imageUrl: "https://cf.geekdo-images.com/lqmt2Oti_qJS65XqHcB8AA__imagepage/img/dxrUKI24svPBCJAcNqzHy_uayp4=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5146864.png",
+                description: "Betrayal at House on the Hill is a tile game that allows players to lay out the haunted house room by room, tile by tile, creating a new thrilling game board every time. The game is designed for three to six people, each of whom plays one of six possible characters.",
+                _createdOn: 1755433291532,
+                likes: [],
+                _id: "ec3b1941-9189-4419-b8bd-218ee75520bc"
             },
         },
     	movies: {
