@@ -3,11 +3,12 @@ import { Game } from '../types/games.js';
 import { ApiService } from '../api.service.js';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { LoaderComponent } from '../shared/loader/loader.component.js';
+import { SlicePipe } from '../shared/pipes/slice.pipe.js';
 
 @Component({
   selector: 'app-collection',
   standalone: true,
-  imports: [RouterLink, LoaderComponent],
+  imports: [RouterLink, LoaderComponent, SlicePipe],
   templateUrl: './collection.component.html',
   styleUrl: './collection.component.css'
 })
