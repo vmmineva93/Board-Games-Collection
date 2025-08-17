@@ -10,6 +10,7 @@
         <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
         </div>
         <div class="row g-4 portfolio-container">
+            @if (games.length > 0) {
             @for (game of games ; track $index) {
             <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                 <div class="portfolio-inner">
@@ -29,6 +30,9 @@
                     </div>
                 </div>
             </div>
+            }
+            }@else {
+            <h3 className="no-vinyls">No games yet!</h3>
             }
         </div>
     </div>

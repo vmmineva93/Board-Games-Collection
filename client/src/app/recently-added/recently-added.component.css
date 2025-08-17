@@ -43,3 +43,7 @@
 .text-primary {
     color: red !important;
 }
+
+h3 {
+    text-align: center;
+}

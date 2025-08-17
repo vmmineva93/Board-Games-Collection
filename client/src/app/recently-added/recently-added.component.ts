@@ -11,7 +11,7 @@ import { LoaderComponent } from '../shared/loader/loader.component.js';
   styleUrl: './recently-added.component.css'
 })
 export class RecentlyAddedComponent implements OnInit{
-  lastThree: Game[] = [];
+  lastFour: Game[] = [];
   isLoading = true;
 
   constructor(private apiService: ApiService) {}
@@ -19,7 +19,7 @@ export class RecentlyAddedComponent implements OnInit{
   ngOnInit() {
     this.apiService.getGames().subscribe(games => {
       this.isLoading = false;
-      this.lastThree = games.slice(-4); 
+      this.lastFour = games.slice(-4); 
       
     });
   }
