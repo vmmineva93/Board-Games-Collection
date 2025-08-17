@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard.js';
+import { GuestGuard } from './guards/guest.guard.js';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,7 +23,7 @@ export const routes: Routes = [
             ),
     },
     {
-        path: 'profile', loadComponent: () =>
+        path: 'profile', canActivate: [GuestGuard], loadComponent: () =>
             import('../app/user/profile/profile.component.js').then(
                 (c) => c.ProfileComponent
             ),
@@ -43,7 +44,7 @@ export const routes: Routes = [
                     ),
             },
             {
-                path: 'edit/:gameId', loadComponent: () =>
+                path: 'edit/:gameId', canActivate: [GuestGuard], loadComponent: () =>
                     import('../app/single-game/edit-game/edit-game.component.js').then(
                         (c) => c.EditGameComponent
                     ),
@@ -51,7 +52,7 @@ export const routes: Routes = [
         ],
     },
     {
-        path: 'add-game', loadComponent: () =>
+        path: 'add-game', canActivate: [GuestGuard], loadComponent: () =>
             import('../app/single-game/add-game/add-game.component.js').then(
                 (c) => c.AddGameComponent
             ),
