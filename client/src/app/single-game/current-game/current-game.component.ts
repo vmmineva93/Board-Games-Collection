@@ -4,6 +4,7 @@ import { User } from '../../types/user.js';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../api.service.js';
 import { UserService } from '../../user/user.service.js';
+import { LoaderComponent } from '../../shared/loader/loader.component.js';
 
 @Component({
   selector: 'app-current-game',

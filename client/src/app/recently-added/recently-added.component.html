@@ -1,4 +1,7 @@
 <div class="container-xxl py-5">
+    @if (isLoading) {
+    <app-loader />
+    } @else {
     <div class="container">
         <div class="row g-4">
             @for (game of lastThree ; track $index) {
@@ -7,7 +10,8 @@
                     <div class="overflow-hidden position-relative">
                         <img class="img-fluid" src={{game.imageUrl}} alt="">
                         <div class="team-social">
-                            <a [routerLink]="['/collection', game._id]" class="btn btn-square btn-dark rounded-circle m-1">Details</a>
+                            <a [routerLink]="['/collection', game._id]"
+                                class="btn btn-square btn-dark rounded-circle m-1">Details</a>
                         </div>
                     </div>
                     <div class="text-center p-4">
@@ -16,7 +20,8 @@
                     </div>
                 </div>
             </div>
-        }
+            }
         </div>
     </div>
+    }
 </div>

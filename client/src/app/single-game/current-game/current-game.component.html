@@ -41,14 +41,14 @@
                         <div class="col-6b">
                             <div class="d-flexb">
 
-                               @if(isLogged && isOwner) {
-                                    <a [routerLink]="'/collection/edit/' + game._id" class="btn-class">Edit</a>
-                                    <button (click)="delete()" class="btn-class">Delete</button>
-                               }
-                               @if(isLogged && !isGameLikedByUser && !isOwner) {
+                                @if(isLogged && isOwner) {
+                                <a [routerLink]="'/collection/edit/' + game._id" class="btn-class">Edit</a>
+                                <button (click)="delete()" class="btn-class">Delete</button>
+                                }
+                                @if(isLogged && !isGameLikedByUser && !isOwner) {
                                 <button (click)="like(game._id)" class="btn-class">Like</button>
-                               }
-                              
+                                }
+
 
                             </div>
                         </div>
@@ -67,9 +67,7 @@
             </div>
             <div class="right-container">
                 <div class="pic-container">
-                    <img class="img-position"
-                        src={{game.imageUrl}}
-                        alt="" />
+                    <img class="img-position" src={{game.imageUrl}} alt="" />
                 </div>
             </div>
         </div>
