@@ -1,40 +1,50 @@
 <div class="container-xxl py-5">
     @if (isLoading) {
-    <app-loader />
+      <app-loader />
     } @else {
-    <div class="container">
+      <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h1 class="display-5 mb-5">Our Games</h1>
+          <h1 class="display-5 mb-5">Our Games</h1>
         </div>
-
-        <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+  
+        <!-- ✅ Тук добавяме search box -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <input 
+              type="text" 
+              [(ngModel)]="searchText" 
+              (input)="onSearch()" 
+              class="form-control" 
+              placeholder="Търси по заглавие...">
+          </div>
         </div>
+  
         <div class="row g-4 portfolio-container">
-            @if (games.length > 0) {
-            @for (game of games ; track $index) {
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+          @if (filteredGames.length > 0) {
+            @for (game of filteredGames; track $index) {
+              <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                 <div class="portfolio-inner">
-                    <img class="img-fluid w-100" src={{game.imageUrl}} alt="">
-                    <div class="text-center p-4">
-                        <p class="text-primary mb-2">{{game.title | slice : 30}}</p>
-                        <h5 class="lh-base mb-0">{{game.categories}}</h5>
+                  <img class="img-fluid w-100" [src]="game.imageUrl" alt="">
+                  <div class="text-center p-4">
+                    <p class="text-primary mb-2">{{ game.title | slice:30 }}</p>
+                    <h5 class="lh-base mb-0">{{ game.categories }}</h5>
+                  </div>
+                  <div class="portfolio-text text-center bg-white p-4">
+                    <p class="text-primary mb-2">{{ game.title | slice:30 }}</p>
+                    <h5 class="lh-base mb-3">{{ game.categories }}</h5>
+                    <div class="d-flex justify-content-center">
+                      <a [routerLink]="['/collection', game._id]" 
+                         class="btn btn-square btn-primary rounded-circle mx-1" 
+                         data-lightbox="portfolio">Details</a>
                     </div>
-                    <div class="portfolio-text text-center bg-white p-4">
-                        <p class="text-primary mb-2">{{game.title | slice : 30}}</p>
-                        <h5 class="lh-base mb-3">{{game.categories}}</h5>
-                        <div class="d-flex justify-content-center">
-                            <a [routerLink]="['/collection', game._id]"
-                                class="btn btn-square btn-primary rounded-circle mx-1"
-                                data-lightbox="portfolio">Details</a>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
             }
-            }@else {
+          } @else {
             <h3 class="no-vinyls">No games yet!</h3>
-            }
+          }
         </div>
-    </div>
+      </div>
     }
-</div>
+  </div>

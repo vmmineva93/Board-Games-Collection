@@ -63,3 +63,8 @@ h3 {
 .img-fluid {
     height: 350px !important;
 }
+
+.form-control {
+    max-width: 400px;
+    margin: 0 auto;
+  }
