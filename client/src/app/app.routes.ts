@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard.js';
 import { GuestGuard } from './guards/guest.guard.js';
+import { OwnerGuard } from './guards/owner.guard.js';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -44,7 +45,7 @@ export const routes: Routes = [
                     ),
             },
             {
-                path: 'edit/:gameId', canActivate: [GuestGuard], loadComponent: () =>
+                path: 'edit/:gameId', canActivate: [GuestGuard, OwnerGuard], loadComponent: () =>
                     import('../app/single-game/edit-game/edit-game.component.js').then(
                         (c) => c.EditGameComponent
                     ),
