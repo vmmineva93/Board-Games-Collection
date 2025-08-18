@@ -10,59 +10,59 @@
             <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 pe-lg-0">
                     <h1 class="display-5 mb-5">Login</h1>
-                    <form #form="ngForm" (ngSubmit)="login(form)">
+                    <form class="login" [formGroup]="form" (ngSubmit)="login()">
                         <div>
                             <div class="login-fields">
                                 <div class="email">
                                     <div class="">
-                                        <input  [class]="(
-                                            (inputEmail?.touched && inputEmail?.errors?.['required']) || 
-                                             (inputEmail?.touched && inputEmail?.errors?.['emailValidator']))
-                                             ? 'input-error': ''"
-                                        type="email" id="email" name="email" class="form-control border-0" placeholder="Your Email"
-                                            style="height: 55px;" #inputEmail="ngModel" ngModel required
-                                            [appEmail]="domains">
+                                        <input
+                                            [class]="isFieldTextMissing('email') || isEmailNotValid ? 'input-error': ''"
+                                            type="email" id="email" name="email" class="form-control border-0"
+                                            placeholder="Your Email" style="height: 55px;" formControlName="email" />
                                     </div>
-                                    @if(inputEmail?.touched){
+                                    @if(form.get('email')?.touched) {
                                     <div>
-                                        @if(inputEmail?.errors?.['required']){
-                                        <p class="error">Email is required!</p>
+                                        @if(form.get('email')?.errors?.['required']) {
+                                        <p class="error">
+                                            Email is required!
+                                        </p>
                                         }
-                                        <!--  -->
-                                        @if(inputEmail?.errors?.['emailValidator']){
-                                        <p class="error">Email is not valid!</p>
+                                        @if(form.get('email')?.errors?.['emailValidator']) {
+                                        <p class="error">
+                                            Email is not valid!
+                                        </p>
                                         }
                                     </div>
                                     }
                                 </div>
                                 <div class="password">
                                     <div class="">
-                                        <input [class]="(
-                                            (inputPassword?.touched && inputPassword?.errors?.['required']) || 
-                                            (inputPassword?.touched && inputPassword?.errors?.['minlength']))
-                                            ? 'input-error': ''" type="password" class="form-control border-0" placeholder="Your Password"
-                                            style="height: 55px;" name="password" id="password" ngModel #inputPassword="ngModel"
-                                            minlength="5" required
-                                        >
+                                        <input
+                                            [class]="isFieldTextMissing('password') || isNotMinPassword ? 'input-error': ''"
+                                            type="password" class="form-control border-0" placeholder="Your Password"
+                                            style="height: 55px;" name="password" id="password"
+                                            formControlName="password">
                                     </div>
-                                    @if(inputPassword?.touched){
+                                    @if(form.get('password')?.touched) {
                                     <div>
-                                        @if(inputPassword?.errors?.['required']){
-                                        <p class="error">Password is required!</p>
+                                        @if(form.get('password')?.errors?.['required']) {
+                                        <p class="error">
+                                            Password is required!
+                                        </p>
                                         }
-                                        <!--  -->
-                                        @if(inputPassword?.errors?.['minlength']){
-                                        <p class="error">Password must be at least 5 characters!</p>
+                                        @if(form.get('password')?.errors?.['minlength']) {
+                                        <p class="error">
+                                            Password must be at least 5 characters!
+                                        </p>
                                         }
                                     </div>
                                     }
                                 </div>
-                            
+
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" 
-                                [disabled]="form.invalid"
-                                [style]="{ backgroundColor: form.invalid ? 'grey' : 'black' }">Login</button>
+                                <button class="btn btn-primary w-100 py-3" [disabled]="form.invalid"
+                                    [style]="{ backgroundColor: form.invalid ? 'grey' : 'black' }">Login</button>
                             </div>
                             <p class="field reg-log-span">
                                 <span>If you don't have profile click <a routerLink="/register"
