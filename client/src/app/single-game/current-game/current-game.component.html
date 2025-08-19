@@ -17,16 +17,16 @@
                         <div class="col-6">
                             <div class="d-flex">
                                 <div class="ms-4">
-                                    <p class="paragraph-info">Playing Time:</p>
-                                    <h5 class="mb-0">{{game.playingTime}} Min</h5>
+                                    <p class="paragraph-info">Players:</p>
+                                    <h5 class="mb-0">{{game.players}}</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="d-flex">
                                 <div class="ms-4">
-                                    <p class="paragraph-info">Players:</p>
-                                    <h5 class="mb-0">{{game.players}}</h5>
+                                    <p class="paragraph-info">Playing Time:</p>
+                                    <h5 class="mb-0">{{game.playingTime}} Min</h5>
                                 </div>
                             </div>
                         </div>
@@ -41,6 +41,7 @@
                         <div class="col-6b">
                             <div class="d-flexb">
 
+
                                 @if(isLogged && isOwner) {
                                 <a [routerLink]="'/collection/edit/' + game._id" class="btn-class">Edit</a>
                                 <button (click)="delete()" class="btn-class">Delete</button>
@@ -48,7 +49,6 @@
                                 @if(isLogged && !isGameLikedByUser && !isOwner) {
                                 <button (click)="like(game._id)" class="btn-class">Like</button>
                                 }
-
 
                             </div>
                         </div>

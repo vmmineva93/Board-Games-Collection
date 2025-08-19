@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
-import { finalize, take, tap } from 'rxjs/operators';
+import { finalize, take } from 'rxjs/operators';
 import { ErrorMsgService } from './error-msg.service.js';
 
 @Component({
@@ -39,3 +39,4 @@ export class ErrorMsgComponent implements OnInit, OnDestroy {
     ).subscribe();
   }
 }
+
