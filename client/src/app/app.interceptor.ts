@@ -34,10 +34,14 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
   .pipe(
     catchError((err) => {
       if (err.status === 401) {
+        safeStorage.removeItem('X-Authorization');
+        safeStorage.removeItem('user');
         router.navigate(['/home']);
       } else if (err.status === 403){
         safeStorage.removeItem('X-Authorization');
         errorService.setError(err);
+        safeStorage.removeItem('user');
+        router.navigate(['/login']);
       } else if (err.status === 404){
         errorService.setError(err);
         router.navigate(['/404']);
@@ -51,3 +55,4 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
     })
   );
 };
+
