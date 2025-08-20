@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../user.service.js';
 import { DOMAINS } from '../../constants.js';
-import { EmailValidationDirective } from '../../directives/email-validation.directive.js';
 import { SafeStorageService } from '../../safe-storage.service.js';
 import { emailValidator } from '../../utils/emailValidator.js';
 

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service.js';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserService } from '../user/user.service.js';
 import { RecentlyAddedComponent } from '../recently-added/recently-added.component.js';

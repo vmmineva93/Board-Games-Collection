@@ -21,8 +21,7 @@ export interface GamePayload {
     imageUrl: string;
     description: string;
   }
-  
-  // Тип за Like
+
   export interface Like {
     _id: string;
     gameId: string;

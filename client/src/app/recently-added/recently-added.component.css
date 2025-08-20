@@ -47,3 +47,8 @@
 h3 {
     text-align: center;
 }
+
+.img-fluid {
+    height: 240px;
+    width: 280px;
+}
