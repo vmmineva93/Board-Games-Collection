@@ -1,5 +1,5 @@
 # Board-Games-Collection
-My First Angular Project for a Board Games Collection
+My First Angular Project for a Board Games Collection. It provides a public area where visitors can view the collection and game details, and a private area where registered users can add to the collection. 
 
 # Run the Project
 
