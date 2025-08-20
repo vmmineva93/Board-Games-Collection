@@ -45,10 +45,12 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
       } else if (err.status === 404){
         errorService.setError(err);
         router.navigate(['/404']);
+      } else if (err.status === 409) {
+        errorService.setError(err);
       }
        else {
         errorService.setError(err);
-        router.navigate(['/error']);
+        router.navigate(['/404']);
       }
 
       return throwError(() => err);

@@ -55,7 +55,7 @@ export class LoginComponent {
 
     const { email, password } = this.form.value;
     
-    this.userService.login(email!, password!).subscribe((data) => {
+    this.userService.login({email: email!, password: password!}).subscribe((data) => {
       const token = data.accessToken;
       this.safeStorage.setItem('X-Authorization', token);
       this.router.navigate(['/home']);
