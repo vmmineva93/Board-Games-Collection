@@ -5,7 +5,7 @@
             <div class="form-group">
                 <label for="title"></label>
                 <input required type="text" class="form-control" name="title" id="title" ngModel #inputTitle="ngModel"
-                    minlength="3" />
+                    minlength="3" maxlength="40" />
 
             </div>
             @if(inputTitle?.touched){
@@ -13,9 +13,11 @@
                 @if(inputTitle?.errors?.['required']){
                 <p class="error">Game title is required!</p>
                 }
-                <!---->
                 @if(inputTitle?.errors?.['minlength']){
                 <p class="error">Game title must be at least 3 characters long!</p>
+                }
+                @if(inputTitle?.errors?.['maxlength']){
+                <p class="error">Description must be at less 40 characters long!</p>
                 }
             </div>
             }
@@ -109,9 +111,8 @@
                 }
             </div>
             <div class="btn-container">
-                <button  [disabled]="editForm.invalid"
-                [style]="{ backgroundColor: editForm.invalid ? 'grey' : 'black' }"
-                class="btn btn-primary new-btn">Submit</button>
+                <button [disabled]="editForm.invalid" [style]="{ backgroundColor: editForm.invalid ? 'grey' : 'black' }"
+                    class="btn btn-primary new-btn">Submit</button>
                 <button onclick="window.history.back()" class="btn btn-primary new-btn">Cancel</button>
             </div>
         </form>

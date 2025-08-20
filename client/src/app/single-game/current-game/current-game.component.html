@@ -3,7 +3,11 @@
         <div class="details-container">
             <div class="left-container">
                 <div class="text-container">
-                    <h1 class="display-artist">{{game.title}}</h1>
+                    <h1 class="display-artist">{{game.title | uppercase }} <p>
+                        <b>Uploaded: </b> <time>{{ game._createdOn | elapsedTime }}</time>
+                      </p>
+                      </h1>
+                    
                     <p class="display-description">{{game.description}}</p>
                     <div class="game-info">
                         <div class="col-6">

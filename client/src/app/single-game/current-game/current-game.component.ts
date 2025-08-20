@@ -110,11 +110,13 @@ import { ApiService } from '../../api.service.js';
 import { UserService } from '../../user/user.service.js';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
+import { ElapsedTimePipe } from '../../shared/pipes/elapsed-time.pipe.js';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-current-game',
   standalone: true, 
-  imports: [RouterLink],
+  imports: [RouterLink, ElapsedTimePipe, CommonModule],
   templateUrl: './current-game.component.html',
   styleUrls: ['./current-game.component.css']
 })
