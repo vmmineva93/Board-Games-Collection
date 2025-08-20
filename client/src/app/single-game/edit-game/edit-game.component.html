@@ -4,119 +4,114 @@
         <form #editForm="ngForm" (ngSubmit)="edit()">
             <div class="form-group">
                 <label for="title"></label>
-                <input required type="text" class="form-control" name="title" id="title" placeholder="Title" ngModel
-                    #inputTitle="ngModel" minlength="3" />
+                <input required type="text" class="form-control" name="title" id="title" ngModel #inputTitle="ngModel"
+                    minlength="3" />
 
             </div>
             @if(inputTitle?.touched){
             <div>
                 @if(inputTitle?.errors?.['required']){
-                <p class="error">Game title is required.</p>
+                <p class="error">Game title is required!</p>
                 }
                 <!---->
                 @if(inputTitle?.errors?.['minlength']){
-                <p class="error">Game title must be at least 3 characters long.</p>
+                <p class="error">Game title must be at least 3 characters long!</p>
                 }
             </div>
             }
             <div class="form-group">
                 <label for="players"></label>
-                <input required type="text" class="form-control" name="players" id="players" placeholder="PLayers"
-                    ngModel #inputPlayers="ngModel" minlength="3" />
+                <input required type="text" class="form-control" name="players" id="players" ngModel
+                    #inputPlayers="ngModel" />
             </div>
             @if(inputPlayers?.touched){
             <div>
                 @if(inputPlayers?.errors?.['required']){
-                <p class="error">Number of players is required.</p>
-                }
-                <!---->
-                @if(inputPlayers?.errors?.['minlength']){
-                <p class="error">Number of players must be at least 3 characters long.</p>
+                <p class="error">Number of players is required!</p>
                 }
             </div>
             }
             <div class="form-group">
                 <label for="playingTime"></label>
-                <input required type="text" class="form-control" name="playingTime" id="playingTime"
-                    placeholder="PlayingTime" ngModel #inputPlayingTime="ngModel" minlength="3" />
+                <input required type="text" class="form-control" name="playingTime" id="playingTime" ngModel
+                    #inputPlayingTime="ngModel" />
             </div>
             @if(inputPlayingTime?.touched){
             <div>
                 @if(inputPlayingTime?.errors?.['required']){
-                <p class="error">Playing time is required.</p>
-                }
-                <!---->
-                @if(inputPlayingTime?.errors?.['minlength']){
-                <p class="error">Playing time must be at least 3 characters long.</p>
+                <p class="error">Playing time is required!</p>
                 }
             </div>
             }
             <div class="form-group">
                 <label for="age"></label>
-                <input required type="text" class="form-control" name="age" id="age" placeholder="Age" ngModel
-                    #inputAge="ngModel" minlength="3" />
+                <input required type="text" class="form-control" name="age" id="age" ngModel #inputAge="ngModel" />
             </div>
             @if(inputAge?.touched){
             <div>
                 @if(inputAge?.errors?.['required']){
-                <p class="error">Age is required.</p>
-                }
-                <!---->
-                @if(inputAge?.errors?.['minlength']){
-                <p class="error">Age must be at least 3 characters long.</p>
+                <p class="error">Age is required!</p>
                 }
             </div>
             }
             <div class="form-group">
                 <label for="categories"></label>
-                <input required type="text" class="form-control" name="categories" id="categories"
-                    placeholder="Categories" ngModel #inputCategories="ngModel" minlength="3" />
+                <input required type="text" class="form-control" name="categories" id="categories" ngModel
+                    #inputCategories="ngModel" minlength="3" />
             </div>
             @if(inputCategories?.touched){
             <div>
                 @if(inputCategories?.errors?.['required']){
-                <p class="error">Categories is required.</p>
+                <p class="error">Categories is required!</p>
                 }
                 <!---->
                 @if(inputCategories?.errors?.['minlength']){
-                <p class="error">Categories must be at least 3 characters long.</p>
+                <p class="error">Categories must be at least 3 characters long!</p>
                 }
             </div>
             }
             <div class="form-group">
                 <label for="imageUrl"></label>
-                <input required type="text" class="form-control" name="imageUrl" id="imageUrl" placeholder="ImageUrl"
-                    ngModel #inputImageUrl="ngModel" minlength="3" />
+                <input required type="text" class="form-control" name="imageUrl" id="imageUrl" ngModel
+                    #inputImageUrl="ngModel" minlength="10" appImageValidation />
             </div>
             @if(inputImageUrl?.touched){
             <div>
                 @if(inputImageUrl?.errors?.['required']){
-                <p class="error">ImageUrl is required.</p>
+                <p class="error">ImageUrl is required!</p>
                 }
                 <!---->
                 @if(inputImageUrl?.errors?.['minlength']){
-                <p class="error">ImageUrl must be at least 3 characters long.</p>
+                <p class="error">ImageUrl must be at least 10 characters long!</p>
+                }
+                @if(inputImageUrl?.errors?.['imageValidator']){
+                <p class="error">
+                    Image URL is invalid!</p>
                 }
             </div>
             }
             <div class="form-group">
                 <label for="description"></label>
-                <textarea required name="description" class="form-control" id="description" placeholder="Description"
-                    ngModel #inputDescription="ngModel" minlength="10"></textarea>
+                <textarea required name="description" class="form-control" id="description" ngModel
+                    #inputDescription="ngModel" minlength="10" maxlength="600"></textarea>
                 @if(inputDescription?.touched){
                 <div>
                     @if(inputDescription?.errors?.['required']){
                     <p class="error">Description is required.</p>
                     }
-                    <!---->
                     @if(inputDescription?.errors?.['minlength']){
                     <p class="error">Description must be at least 5 characters long.</p>
+                    }
+                    @if(inputDescription?.errors?.['maxlength']){
+                    <p class="error">Description must be at less 600 characters long!</p>
                     }
                 </div>
                 }
             </div>
             <div class="btn-container">
-                <button class="btn btn-primary new-btn">Submit</button>
+                <button  [disabled]="editForm.invalid"
+                [style]="{ backgroundColor: editForm.invalid ? 'grey' : 'black' }"
+                class="btn btn-primary new-btn">Submit</button>
                 <button onclick="window.history.back()" class="btn btn-primary new-btn">Cancel</button>
             </div>
         </form>

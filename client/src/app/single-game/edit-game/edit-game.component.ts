@@ -3,11 +3,12 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { Game } from '../../types/games.js';
 import { ApiService } from '../../api.service.js';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ImageUrlValidationDirective } from "../../directives/image-validation.directive";
 
 @Component({
   selector: 'app-edit-game',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ImageUrlValidationDirective],
   templateUrl: './edit-game.component.html',
   styleUrl: './edit-game.component.css'
 })
@@ -44,7 +45,7 @@ export class EditGameComponent implements OnInit {
     const gameId = this.game._id;
 
     this.apiService
-      .updateGame(gameId, title, players, playingTime, age, categories, imageUrl, description )
+      .updateGame(gameId, {title, players, playingTime, age, categories, imageUrl, description} )
       .subscribe((res) => {
         this.router.navigate(['/collection']);
       });

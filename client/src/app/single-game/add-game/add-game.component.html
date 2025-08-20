@@ -104,14 +104,16 @@
                     @if(inputDescription?.errors?.['minlength']){
                     <p class="error">Description must be at least 10 characters long!</p>
                     }
-                    @if(inputDescription?.errors?.['maxLength']){
+                    @if(inputDescription?.errors?.['maxlength']){
                     <p class="error">Description must be at less 600 characters long!</p>
                     }
                 </div>
                 }
             </div>
             <div class="btn-container">
-                <button class="btn btn-primary new-btn">Submit</button>
+                <button [disabled]="form.invalid"
+                [style]="{ backgroundColor: form.invalid ? 'grey' : 'black' }"
+                class="btn btn-primary new-btn">Submit</button>
                 <button onclick="window.history.back()" class="btn btn-primary new-btn">Cancel</button>
             </div>
         </form>
