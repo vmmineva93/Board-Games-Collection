@@ -29,6 +29,10 @@ export class RegisterComponent {
   register() {
     const { username, email, password, rePassword } = this.registerForm?.form.value;
 
+    if (password !== rePassword) {
+      return; 
+    }
+
     this.userService
       .register({username, email, password, rePassword})
       .subscribe((data) => {

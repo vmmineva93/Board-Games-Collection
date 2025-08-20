@@ -112,7 +112,7 @@
                             </div>
                        
                             <div class="col-12">
-                                <button [disabled]="registerForm.invalid"
+                                <button [disabled]="registerForm.invalid || passwordsDontMatch"
                                 [style]="{ backgroundColor: registerForm.invalid ? 'grey' : 'black' }"
                                 class="btn btn-primary w-100 py-3" type="submit">Register</button>
                             </div>
