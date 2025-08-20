@@ -11,3 +11,20 @@ export interface Game {
     likes: string[];
     _id: string;
 }
+
+export interface GamePayload {
+    title: string;
+    players: string;
+    playingTime: string;
+    age: string;
+    categories: string;
+    imageUrl: string;
+    description: string;
+  }
+  
+  // Тип за Like
+  export interface Like {
+    _id: string;
+    gameId: string;
+    _ownerId: string;
+  }
