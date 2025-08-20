@@ -45,20 +45,23 @@ export class LoginComponent {
   }
 
 
-
   login() {
-    
     if (this.form.invalid) {
       return;
     }
-
+  
     const { email, password } = this.form.value;
-    
-    this.userService.login({email: email!, password: password!}).subscribe((data) => {
-      const token = data.accessToken;
-      this.safeStorage.setItem('X-Authorization', token);
-      this.router.navigate(['/home']);
-    })
+  
+    this.userService.login({ email: email!, password: password! }).subscribe({
+      next: (data) => {
+        const token = data.accessToken;
+        this.safeStorage.setItem('X-Authorization', token);
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        this.errorMsg = err?.error?.message || 'Invalid email or password.';
+      }
+    });
   }
 
 }
